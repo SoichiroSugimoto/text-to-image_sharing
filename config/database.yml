@@ -8,9 +8,9 @@ default: &default
 
 development:
   <<: *default
-  database: text-to-image_sharing_development
+  database: postgres
 
 
 test:
   <<: *default
-  database: text-to-image_sharing_test
+  database: postgres
