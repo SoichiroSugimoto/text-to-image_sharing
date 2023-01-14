@@ -5,6 +5,9 @@
       <h1>
         <%= @user.name %>
       </h1>
+    </section><p>
+    <section class="post_form">
+      <%= render 'shared/post_form' %>
     </section>
   </aside>
   <% if @user.posts.any? %>
