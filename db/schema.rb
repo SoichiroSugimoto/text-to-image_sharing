@@ -10,26 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_13_150821) do
-
+ActiveRecord::Schema.define(version: 20_230_113_150_821) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "posts", force: :cascade do |t|
-    t.text "text", null: false
-    t.string "image", null: false
-    t.integer "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["text", "image", "user_id"], name: "index_posts_on_text_and_image_and_user_id", unique: true
+  create_table 'posts', force: :cascade do |t|
+    t.text 'text', null: false
+    t.string 'image', null: false
+    t.integer 'user_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index %w[text image user_id], name: 'index_posts_on_text_and_image_and_user_id', unique: true
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'name', null: false
+    t.string 'email', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
   end
-
 end
