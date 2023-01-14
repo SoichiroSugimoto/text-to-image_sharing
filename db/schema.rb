@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2023_01_13_150821) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["text", "image", "user_id"], name: "index_posts_on_text_and_image_and_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2023_01_13_150821) do
     t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
