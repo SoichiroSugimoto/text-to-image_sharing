@@ -8,6 +8,8 @@ class PostsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @post = @user.posts.build(text: params[:text], image: params[:image])
-    @post.save
+    if @post.save
+      redirect_to root_url
+    end
   end
 end
