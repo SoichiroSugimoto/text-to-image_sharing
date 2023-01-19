@@ -1,5 +1,5 @@
 <h1>ユーザー一覧</h1>
 <% @users.each do |user| %>
-  <span><%= link_to user.name, user %></span>
+  <span><%= link_to user.name + "(" + user.posts.count.to_s + ")", user %></span>
   <br>
 <% end %>
