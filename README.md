@@ -1,9 +1,11 @@
 # Development tools
 
 ```
-docker compose run web rails console
+$ docker compose run web rails console
 ```
-
+```
+$ docker compose run web rake "data_importer:csv_importer[user.csv]"
+```
 
 
 
