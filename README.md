@@ -1,7 +1,11 @@
-# README
+# Development tools
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+docker compose run web rails console
+```
+
+
+
 
 Things you may want to cover:
 
