@@ -5,6 +5,8 @@
       <h1>
         <%= @user.name %>
       </h1>
+      <p><%= @user.following %></p>
+      <p><%= @user.followers %></p>
     </section><p>
     <section class="post_form">
       <%= render 'shared/post_form' %>
