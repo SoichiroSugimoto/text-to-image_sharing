@@ -1,0 +1,2 @@
+module HttpRequest
+end
