@@ -1,11 +1,14 @@
 module HttpRequest
-  def setup_connection
-    uri = "http://[適当なURI]/"
-    req = Faraday::Connection.new(url: uri) do |conn|
-      conn.adapter Faraday.default_adapter
-      conn.request :url_encoded
-      conn.response :logger # ログを出す
-      conn.headers['Content-Type'] = 'application/json' # ヘッダー指定
+  def man_faraday
+    conn = Faraday.new(
+      url: 'http://httpbingo.org',
+      params: {param: '1'},
+      headers: {'Content-Type' => 'application/json'}
+    )
+
+    response = conn.post('/post') do |req|
+      req.params['limit'] = 100
+      req.body = {query: 'chunky bacon'}.to_json
     end
   end
 end
