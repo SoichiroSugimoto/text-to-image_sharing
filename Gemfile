@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
+gem "google-protobuf"
+gem "grpc"
+
 gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'faraday'
